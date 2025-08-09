@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mikey Way - Galaxy of Love</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="planets"></div>
+  <div class="container">
+    <h1 class="title">Mikey Way</h1>
+    <p class="subtitle">A Universe for Us</p>
+    <button id="enterButton">Enter Galaxy</button>
+  </div>
+
+  <div class="message hidden" id="message">
+    <h2>💫 You’ve Entered the Mikey Way 💫</h2>
+    <p>
+      In the vast sea of stars,<br>
+      you shine the brightest.<br>
+      This galaxy was built for one thing:<br>
+      a love that feels like forever.
+    </p>
+    <button onclick="location.reload()">Back to Earth</button>
+  </div>
+
+  <script>
+    const enterButton = document.getElementById("enterButton");
+    const message = document.getElementById("message");
+
+    enterButton.addEventListener("click", () => {
+      document.querySelector(".container").style.display = "none";
+      message.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
