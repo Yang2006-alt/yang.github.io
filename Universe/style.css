@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  position: relative;
+  color: white;
+}
+
+/* Animated Stars Background */
+.stars::before, .stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate ease-in-out;
+}
+.stars::before {
+  top: 20%;
+  left: 30%;
+}
+.stars::after {
+  top: 70%;
+  left: 80%;
+}
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Planets floating */
+.planets::before, .planets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ccc, #333);
+  opacity: 0.2;
+  animation: floatPlanet 15s ease-in-out infinite alternate;
+}
+.planets::before {
+  width: 100px;
+  height: 100px;
+  bottom: 10%;
+  left: 15%;
+}
+.planets::after {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  right: 20%;
+}
+@keyframes floatPlanet {
+  0% { transform: translateY(0) rotate(0); }
+  100% { transform: translateY(-20px) rotate(20deg); }
+}
+
+/* Main Container */
+.container {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.title {
+  font-size: 3em;
+  text-shadow: 0 0 10px #fff;
+  margin-bottom: 0.3em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  opacity: 0.8;
+}
+
+/* Button */
+button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  padding: 10px 25px;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: #000;
+}
+
+/* Message Box */
+.message {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 90%;
+  background: rgba(0,0,0,0.5);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px white;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+.message h2 {
+  margin-bottom: 1em;
+  font-size: 2em;
+  color: #ffb6c1;
+}
+
+.message p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translate(-50%, -60%); }
+  100% { opacity: 1; transform: translate(-50%, -50%); }
+}
